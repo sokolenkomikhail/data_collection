@@ -15,7 +15,7 @@ class BookparserPipeline:
     def process_item(self, item, spider):
         if spider.name == 'book24':
             # Авторы
-            # Запись в переменную значения из словаря, а затем удаление этой пары ключ-значение из словаря
+            # Запись в переменную значения из словаря
             book_info = item['authors']
 
             # Замена переносов, неразрывных пробелов в элементах списка
@@ -41,7 +41,7 @@ class BookparserPipeline:
                 if len(authors) == 1:
                     authors = authors[0]
 
-            # добавление новой пары в словарь
+            # присваивание значения из переменной
             item['authors'] = authors
 
             # Цены
